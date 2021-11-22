@@ -14,7 +14,7 @@ describe('UserDetailsContainer is rendered', () => {
     it('tests 1 input field missing', () => {
         const { queryByTestId } = render(<TakeOrder />);
 
-        expect(queryByTestId('usernameField')).not.toBeInTheDocument();
+        expect(queryByTestId('usernameFie')).not.toBeInTheDocument();
         expect(queryByTestId('contactNoField')).toBeInTheDocument();
     })
 })
