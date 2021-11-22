@@ -2,13 +2,18 @@ import styled from 'styled-components'
 import { FormGroup, Button } from '@mui/material';
 
 export const UserDetailsContainer = styled(FormGroup)`
-    justify-content: space-evenly;
-    flex-direction: row;
+    && {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
 `;
 
 export const ItemSelectionContainer = styled(UserDetailsContainer)`
-    justify-content: space-evenly;
-    margin-top: 50px;
+    &.item-selection-container {
+        display: ${props => props.showitemscontainer ? 'flex' : 'none' };
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
 `;
 
 export const ItemAvailableLabel = styled('span')`
@@ -18,8 +23,10 @@ export const ItemAvailableLabel = styled('span')`
 `;
 
 export const ItemsContainer = styled(UserDetailsContainer)`
-    width: 50%;
-    flex-direction: column;
+    && {
+        width: 50%;
+        flex-direction: column;
+    }
 `;
 
 export const ItemRow = styled('div')`
@@ -35,3 +42,5 @@ export const SubmitOrder = styled(Button)`
     left: 50%;
     top: 50px;
 `;
+
+export const AddOrderContainer = styled(OrderByContainer)``;
