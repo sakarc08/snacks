@@ -13,5 +13,10 @@ export const ItemList = [
         type: 'item',
         itemName: 'Mathri',
         ratePerKG: '400',
+    },
+    {
+        type: 'item',
+        itemName: 'Chips',
+        ratePerKG: '800',
     }
 ]
