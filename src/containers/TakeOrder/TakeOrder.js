@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Field, Form, Formik, ErrorMessage, } from 'formik'
 import { ItemList } from '../../sample-data/items';
 import { Button, Input, TextField, Checkbox } from '@mui/material';
-import { AddOrderContainer, OrderByContainer, UserDetailsContainer, ItemSelectionContainer, ItemRow, ItemsContainer, ItemAvailableLabel, SubmitOrder } from './TakeOrder.styles';
+import { AddOrderContainer, OrderByContainer, UserDetailsContainer, ItemSelectionContainer, ItemRow, ItemsContainer, ItemAvailableLabel, SubmitOrder } from './TakeOrder.styles.js';
 
-const TakeOrder = () => {
+const TakeOrder = ({ setOrderDetails }) => {
     const [ showItemsContainer, setShowItemsContainer] = useState(false);
     const [userDetails, setUserDetails] = useState({ name: '', contactNo: ''});
     const [ orderList, setOrderList ] = useState([]);
     const [disableSubmitOrder, setDisableSubmitOrder] = useState(true);
 
     useEffect(() => {
+        // both will be removed later
         setOrderList(ItemList.map(item => { return { ...item, 'itemName': item.itemName, isSelected: false, quantity: 0}}))
         // return () => {
         //     cleanup
@@ -19,6 +20,7 @@ const TakeOrder = () => {
 
     const handleOrderSubmit = (values, { setSubmitting }) => {
         console.log('ed', values);
+        setOrderDetails(values);
         setSubmitting(false);
     }
 
